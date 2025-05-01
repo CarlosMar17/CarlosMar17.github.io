@@ -1,0 +1,329 @@
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+body, p, a {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+
+
+@font-face {
+  font-family: "ZingRust";
+  src: url(../assets/fonts/zing.rust-demo-base.woff);
+}
+section {
+  display: grid;
+  grid-template-areas: 
+    "planetaContenido planetaContenido"
+    "introduccion introduccion"
+    "caracteristicas curiosidades";
+}
+.breadcrumb {
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  color: white;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #6c757d;
+}
+.video-background {
+  position: fixed; /* Fija el video en el fondo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Asegura que el video quede detrás del contenido */
+}
+
+.video-background video {
+  object-fit: cover; /* Asegura que el video cubra toda el área del fondo */
+  width: 100%;
+  height: 100%;
+}
+
+#logoCentro img {
+  width: 5em;
+  border-radius: 50%;
+  transform: translateX(50px); /* Mueve la imagen a la derecha */
+}
+
+#logotipo {
+  display: flex;
+  margin-bottom: 20px;
+  color: white;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.5rem;
+  transform: translateX(-20px);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: "IndieFlower";
+}
+
+.logo::after {
+  content: "";
+  position: relative;
+  z-index: -5;
+  left: -5.2em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  border: 4px solid;
+}
+
+.logo span:nth-of-type(1) {
+  font-size: 1.6em;
+}
+
+.logo span:nth-of-type(3) {
+  font-size: 1.6em;
+}
+
+.logo span:nth-of-type(4) {
+  font-size: 1.6em;
+}
+
+.logo span:nth-of-type(6) {
+  font-size: 1.6em;
+}
+
+.video-container {
+  width: 750px; /* Ajusta según necesites */
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  margin: -30px auto 0 auto; /* Sube el video */
+}
+
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+#btnMenu {
+  color: white; /* Icono de menú blanco */
+  background-color: black;
+  padding: 10px 20px; /* Reducimos el padding para hacerlo más delgado */
+  display: block;
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 100%; /* El botón ocupa el 100% del ancho */
+  text-align: center;
+}
+
+/* Estilo del navbar */
+nav {
+  background-color: black; /* Fondo negro para el navbar */
+  padding: 5px 0; /* Reducimos el padding para que sea más delgado */
+  width: 100%; /* El navbar ocupa todo el ancho */
+}
+
+/* Estilo para el menú */
+.menu-principal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Reducimos el espaciado entre los menús */
+  padding: 0;
+  margin: 0;
+}
+
+.menu-principal li {
+  position: relative;
+  list-style: none;
+}
+
+.menu-principal a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Estilo para el submenú */
+.submenu {
+  position: relative;
+}
+
+.submenu .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(51, 51, 51, 0.9);
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.submenu:hover .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  margin: 3px 0; /* Reducimos el margen entre elementos */
+}
+
+.dropdown li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px; /* Reducimos el padding interno */
+  font-size: 14px;
+  color: white;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dropdown li a:hover {
+  background: #ffcc00;
+  color: black;
+  border-radius: 5px;
+  transform: scale(1.05); /* Un pequeño efecto de escala */
+}
+
+#contenidoFooter {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2.5rem 0;
+}
+.texto-justificado {
+  text-align: justify;
+}
+.footer-text {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+footer {
+  margin: 0;
+  background-color: #333030;
+  box-shadow: 0px -1px 10px 0px rgba(255, 166, 0, 1),
+    0px -4px 15px 0px rgba(213, 139, 0, 1),
+    2px -4px 20px 1px rgba(221, 144, 0, 1);
+}
+
+/* Estilo de los botones */
+#menu .btn {
+  display: inline-block;
+  padding: 15px 40px; /* Aumenta el tamaño del botón */
+  font-size: 30px;    /* Aumenta el tamaño de la fuente */
+  color: white;       /* Color de texto */
+  text-align: center; /* Centra el texto */
+  text-decoration: none; /* Elimina el subrayado */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.1s ease; /* Transición para el cambio de color */
+}
+
+#planetaContenido {
+  grid-area: planetaContenido;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#venus {
+  background: url(../assets/images/mapasPlanetas/mapaVenus.webp);
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 20px #000, inset -40px -10px 20px rgba(3, 32, 56, 0.7);
+  animation: venus 15s linear infinite;
+}
+@keyframes venus {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: -800px;
+  }
+}
+#planetaContenido p {
+  font-size: 2em;
+  text-align: center;
+  padding: 1em 0;
+  color: #ffffff;
+}
+h1{
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 3px 3px 4px rgba(136, 66, 15, 1),-1px 3px 9px rgba(255, 128, 0, 1);
+  color: #3c396d;
+}
+
+#caracteristicas p {
+  margin: 1em 0;
+}
+#astronauta {
+  height: 16em;
+  background: url(../assets/images/alien-ovni.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#curiosidades p {
+  margin: 1em 0;
+}
+
+#introduccion{
+  margin-top: 0;
+}
+
+#btn1:hover {
+  background-image: url(../assets/images/imagesNav/1mercurio.webp);
+}
+
+#btn2:hover {
+  background-image: url(../assets/images/imagesNav/3tierra.webp);
+}
+@media screen and (max-width: 800px) {
+
+  section {
+    display: grid;
+    grid-template-areas:
+      "planetaContenido"
+      "introduccion"
+      "caracteristicas"
+      "curiosidades";
+  }
+
+  #planetaContenido p {
+    font-size: 1.3em;
+  }
+
+  #tierra {
+    height: 15em;
+    width: 15em;
+  }
+
+}
