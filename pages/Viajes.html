@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/Viajes.css">
+  <link rel="shortcut icon" href="../assets/icons/iconsCosmos.ico" type="image/x-icon">
+  <title>Viajes Espaciales 🚀</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+  <div class="video-background">
+    <video autoplay muted loop>
+        <source src="../assets/video/VIDEO1.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+  </div>
+
+  <header>
+    <div id="logotipo">
+      <a href="../index.html">
+        <div class="logo">
+          <span>C</span>
+          <span class="planet left">&#129680;</span>
+          <span>S</span>
+          <span class="planet right">&#129680;</span>
+          <span>S</span>
+        </div>
+      </a>
+      <div class="video-container">
+        <img src="../assets/images/Gif.gif" alt="GIF" width="100%" height="100%">
+      </div>
+      <div id="logoCentro">
+        <a target="_blank">
+          <img src="../assets/images/LOGO.jpg" alt="Logo 2125122">
+        </a>
+      </div>
+    </div>
+  </header>
+  
+  
+
+  <nav>
+    <ul class="menu" id="menu">
+      <li><a href="../index.html">Inicio</a></li>
+      <li class="submenu">
+        <a href="Exploracion.html">Exploración Espacial</a>
+        <ul class="dropdown">
+          <li><a href="Viajes.html">Viajes Espaciales</a></li>
+          <li><a href="https://leap-for-mankind.com/" target="_blank">Simulador Espacial</a></li>
+        </ul>
+      </li>      
+      <li><a href="../pages/Solar.html">Sistema Solar</a></li>
+      <li class="submenu">
+        <a href="../pages/Planetas.html">Planetas</a> 
+        <ul class="dropdown">
+          <li><a href="../pages/mercurio.html">Mercurio</a></li>
+          <li><a href="../pages/venus.html">Venus</a></li>
+          <li><a href="../pages/tierra.html">Tierra</a></li>
+          <li><a href="../pages/marte.html">Marte</a></li>
+          <li><a href="../pages/jupiter.html">Júpiter</a></li>
+          <li><a href="../pages/saturno.html">Saturno</a></li>
+          <li><a href="../pages/urano.html">Urano</a></li>
+          <li><a href="../pages/neptuno.html">Neptuno</a></li>
+          <li><a href="../pages/luna.html">Luna</a></li>
+          <li><a href="../pages/sol.html">Sol</a></li>
+        </ul>
+      </li>
+      <li><a href="../pages/Cometas.html">Cometas</a></li>
+    </ul>
+  </nav>
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../index.html">Inicio</a> &gt;
+    <a href="Viajes.html">Viajes Espaciales</a>
+
+
+    <section class="welcome-section">
+        <h3>Viajes Espaciales 🚀</h3>
+      </section>
+    
+      <section class="news-section">
+        <div id="news-container">
+            <p>Cargando noticias...</p>
+        </div>
+    </section>
+    <div class="galeria">
+      <center><h3>Galería Espacial 🌠</h3></center>
+
+        <div class="slider">
+            <div class="cards">
+                <div class="flips-cards" onclick="mostrarInfo('apolo11')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/images/Apolo11.jpg" alt="Apolo 11">
+                        </div>
+                        <div class="flip-card-back" id="apolo11">
+                            <h2>Apolo 11</h2>
+                            <p>Nave que llevó a los norteamericanos a la Luna.</p>
+                        </div>
+                    </div>
+                    <div class="info-extra" id="info-apolo11">Apolo 11 fue la primera misión tripulada en aterrizar en la Luna en 1969.</div>
+                </div>
+                <div class="flips-cards" onclick="mostrarInfo('sputnik1')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/images/Sputnik1.jpg" alt="Sputnik 1">
+                        </div>
+                        <div class="flip-card-back" id="sputnik1">
+                            <h2>Sputnik 1</h2>
+                            <p>Nave que se hizo famosa entre las personas corrientes.</p>
+                        </div>
+                    </div>
+                    <div class="info-extra" id="info-sputnik1">El Sputnik 1 fue el primer satélite artificial en orbitar la Tierra, lanzado por la Unión Soviética en 1957.</div>
+                </div>
+                <div class="flips-cards" onclick="mostrarInfo('hubble')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/images/Hubble.jpg" alt="Hubble">
+                        </div>
+                        <div class="flip-card-back" id="hubble">
+                            <h2>Hubble</h2>
+                            <p>Nave que se hizo famosa entre las personas corrientes.</p>
+                        </div>
+                    </div>
+                    <div class="info-extra" id="info-hubble">El Telescopio Espacial Hubble ha proporcionado imágenes impresionantes del universo desde 1990.</div>
+                </div>
+                <div class="flips-cards" onclick="mostrarInfo('vostok1')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../assets/images/VostokI.jpg" alt="Vostok I">
+                        </div>
+                        <div class="flip-card-back" id="vostok1">
+                            <h2>Vostok I</h2>
+                            <p>Nave que llevó al primer ser humano al espacio, Yuri Gagarin, en 1961.</p>
+                        </div>
+                    </div>
+                    <div class="info-extra" id="info-vostok1">El Vostok I llevó a Yuri Gagarin en 1961, convirtiéndolo en el primer humano en viajar al espacio.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+  <!-- Modal para mostrar información -->
+  <div id="modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="modal-text"></p>
+      </div>
+  </div>
+  <center><h3>Modelado 3D</h3></center>
+  <div id="modelo3D" style="width: 100%; height: 400px; display: flex; justify-content: center; align-items: center;"></div>
+
+<center>
+  <section class="quiz">
+    <h2>¿Cuánto sabes sobre viajes espaciales? 🧑‍🚀</h2>
+
+    <div class="pregunta activa">
+        <p>1. ¿Cuál fue la primera misión tripulada en llegar a la Luna?</p>
+        <button class="respuesta" data-correcta="true">Apolo 11</button>
+        <button class="respuesta">Apolo 13</button>
+        <button class="respuesta">Sputnik 1</button>
+    </div>
+
+    <div class="pregunta">
+        <p>2. ¿Quién fue el primer ser humano en viajar al espacio?</p>
+        <button class="respuesta" data-correcta="true">Yuri Gagarin</button>
+        <button class="respuesta">Neil Armstrong</button>
+        <button class="respuesta">Buzz Aldrin</button>
+    </div>
+
+    <div class="pregunta">
+        <p>3. ¿Qué planeta es conocido como el ‘Planeta Rojo’?</p>
+        <button class="respuesta" data-correcta="true">Marte</button>
+        <button class="respuesta">Venus</button>
+        <button class="respuesta">Júpiter</button>
+    </div>
+
+    <div class="pregunta">
+        <p>4. ¿Cuál fue el primer satélite artificial puesto en órbita?</p>
+        <button class="respuesta" data-correcta="true">Sputnik 1</button>
+        <button class="respuesta">Explorer 1</button>
+        <button class="respuesta">Luna 2</button>
+    </div>
+
+    <div class="pregunta">
+        <p>5. ¿Cuál es el telescopio espacial más famoso de la NASA?</p>
+        <button class="respuesta" data-correcta="true">Hubble</button>
+        <button class="respuesta">Kepler</button>
+        <button class="respuesta">James Webb</button>
+    </div>
+
+    <p id="resultado"></p>
+    <button id="siguientePregunta" onclick="mostrarSiguiente()">Siguiente</button>
+    <button id="verResultado" onclick="calcularResultado()">Ver Resultado</button>
+    <button id="reiniciar" onclick="reiniciarQuiz()">Reiniciar Quiz</button>
+</section>
+</center>
+
+
+  
+
+  
+
+
+
+
+
+
+
+<footer> 
+  <div id="contenidoFooter">
+    <div id="creditos">
+      <p>INFORMACIÓN</p>
+      <p class="texto-justificado">
+        T-Box está trabajando con el programa educativo Operación Espacial 2.0, el cual tiene como propósito realizar investigaciones para descubrir datos interesantes sobre el Sistema Solar. Deberás aplicar tus habilidades como detective de información para resolver todos los casos de investigación que se plantean en esta aventura espacial.
+      </p>
+      
+    </div>
+
+  </div>
+  <div class="footer-text">
+    (c) 2025 tboxplanet.com The power 2.0 connect
+  </div>
+  
+</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    function mostrarInfo(id) {
+        var info = document.getElementById(id);
+        if (info.style.display === "none" || info.style.display === "") {
+            info.style.display = "block";
+        } else {
+            info.style.display = "none";
+        }
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nave Espacial 3D en Three.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nave Espacial 3D en Three.js</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+        <script>
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth * 0.7, window.innerHeight * 0.7);
+document.getElementById("modelo3D").appendChild(renderer.domElement);
+
+// Fondo de estrellas
+const loader = new THREE.TextureLoader();
+scene.background = loader.load('https://leap-for-mankind.com/');
+
+// Iluminación
+const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(3, 5, 5);
+scene.add(directionalLight);
+
+// Escalado del cohete
+const scaleFactor = 0.5;
+
+// Material metálico
+const metalMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.8, roughness: 0.3 });
+
+// Cuerpo del cohete
+const bodyGeometry = new THREE.CylinderGeometry(0.3 * scaleFactor, 0.3 * scaleFactor, 1.5 * scaleFactor, 32);
+const body = new THREE.Mesh(bodyGeometry, metalMaterial);
+scene.add(body);
+
+// Punta roja
+const noseGeometry = new THREE.ConeGeometry(0.3 * scaleFactor, 0.5 * scaleFactor, 32);
+const noseMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000, metalness: 0.9, roughness: 0.2 });
+const nose = new THREE.Mesh(noseGeometry, noseMaterial);
+nose.position.y = 1 * scaleFactor;
+scene.add(nose);
+
+// Aletas
+const finMaterial = new THREE.MeshStandardMaterial({ color: 0x0000ff, metalness: 0.6, roughness: 0.3 });
+function createFin(x, z, rotation) {
+    const finGeometry = new THREE.BoxGeometry(0.1 * scaleFactor, 0.5 * scaleFactor, 0.2 * scaleFactor);
+    const fin = new THREE.Mesh(finGeometry, finMaterial);
+    fin.position.set(x, -0.75 * scaleFactor, z);
+    fin.rotation.y = rotation;
+    scene.add(fin);
+}
+createFin(0.3 * scaleFactor, 0, 0);
+createFin(-0.3 * scaleFactor, 0, 0);
+createFin(0, 0.3 * scaleFactor, Math.PI / 2);
+createFin(0, -0.3 * scaleFactor, Math.PI / 2);
+
+// Propulsión animada
+const fireGeometry = new THREE.ConeGeometry(0.2 * scaleFactor, 0.4 * scaleFactor, 16);
+const fireMaterial = new THREE.MeshStandardMaterial({ color: 0xffa500, emissive: 0xff4500 });
+const fire = new THREE.Mesh(fireGeometry, fireMaterial);
+fire.position.y = -1 * scaleFactor;
+scene.add(fire);
+
+// Controles de órbita
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+camera.position.set(0, 0, 3);
+
+// Animación
+function animate() {
+    requestAnimationFrame(animate);
+    body.rotation.y += 0.01;
+    nose.rotation.y += 0.01;
+    fire.scale.y = 1 + Math.sin(Date.now() * 0.01) * 0.2; // Animación del fuego
+    controls.update();
+    renderer.render(scene, camera);
+}
+animate();
+
+        </script>
+
+    
+
+
+    
+    <script>
+      $(document).ready(function() {
+          fetch("https://api.spaceflightnewsapi.net/v4/articles/?limit=3")
+          .then(response => response.json())
+          .then(data => {
+              let newsHTML = "";
+              data.results.forEach(article => {
+                  newsHTML += `
+                      <div class="news-item">
+                          <h2 class="news-title">${article.title}</h2>
+                          <p class="news-summary">${article.summary}</p>
+                          <a href="${article.url}" target="_blank">Leer más</a>
+                          <button class="translate-btn" onclick="traducirNoticia(this)">🇪🇸 Traducir</button>
+                      </div>
+                  `;
+              });
+              $("#news-container").html(newsHTML);
+          })
+          .catch(error => console.error("Error cargando noticias:", error));
+      });
+  
+      function traducirNoticia(btn) {
+          let newsItem = btn.parentElement;
+          let titleElement = newsItem.querySelector(".news-title");
+          let summaryElement = newsItem.querySelector(".news-summary");
+          let textoTitulo = titleElement.innerText;
+          let textoResumen = summaryElement.innerText;
+  
+          Promise.all([
+              fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(textoTitulo)}&langpair=en|es`)
+                  .then(response => response.json())
+                  .then(data => titleElement.innerText = data.responseData.translatedText),
+              fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(textoResumen)}&langpair=en|es`)
+                  .then(response => response.json())
+                  .then(data => summaryElement.innerText = data.responseData.translatedText)
+          ]).then(() => {
+              btn.style.display = "none"; // Oculta el botón después de traducir
+          }).catch(error => console.error("Error en la traducción:", error));
+      }
+  </script>
+
+
+<script>
+  let preguntas = document.querySelectorAll(".pregunta");
+  let preguntaActual = 0;
+
+  function mostrarSiguiente() {
+      let seleccionada = preguntas[preguntaActual].querySelector(".seleccionada");
+      if (!seleccionada) {
+          alert("Selecciona una respuesta antes de continuar.");
+          return;
+      }
+
+      preguntas[preguntaActual].classList.remove("activa");
+      preguntaActual++;
+
+      if (preguntaActual < preguntas.length) {
+          preguntas[preguntaActual].classList.add("activa");
+      }
+
+      if (preguntaActual === preguntas.length - 1) {
+          document.getElementById("siguientePregunta").style.display = "none";
+          document.getElementById("verResultado").style.display = "block";
+      }
+  }
+
+  function calcularResultado() {
+      let respuestasCorrectas = 0;
+      let totalPreguntas = preguntas.length;
+
+      document.querySelectorAll(".respuesta").forEach(boton => {
+          if (boton.dataset.correcta && boton.classList.contains("seleccionada")) {
+              respuestasCorrectas++;
+          }
+      });
+
+      let porcentaje = (respuestasCorrectas / totalPreguntas) * 100;
+      let resultadoTexto = `Obtuviste ${respuestasCorrectas} de ${totalPreguntas} respuestas correctas (${porcentaje.toFixed(2)}%). `;
+
+      if (porcentaje >= 70) {
+          resultadoTexto += "¡Felicidades! Pasaste el quiz. 🎉";
+      } else {
+          resultadoTexto += "Lo siento, no alcanzaste el puntaje necesario. ❌";
+      }
+
+      document.getElementById("resultado").textContent = resultadoTexto;
+      document.getElementById("verResultado").style.display = "none";
+      document.getElementById("reiniciar").style.display = "block";
+  }
+
+  function reiniciarQuiz() {
+      preguntaActual = 0;
+      document.getElementById("resultado").textContent = "";
+
+      preguntas.forEach(pregunta => pregunta.classList.remove("activa"));
+      preguntas[0].classList.add("activa");
+
+      document.querySelectorAll(".respuesta").forEach(boton => {
+          boton.classList.remove("seleccionada");
+      });
+
+      document.getElementById("siguientePregunta").style.display = "block";
+      document.getElementById("verResultado").style.display = "none";
+      document.getElementById("reiniciar").style.display = "none";
+  }
+
+  document.querySelectorAll(".respuesta").forEach(boton => {
+      boton.addEventListener("click", function () {
+          let botonesPregunta = this.parentNode.querySelectorAll(".respuesta");
+          botonesPregunta.forEach(b => b.classList.remove("seleccionada"));
+          this.classList.add("seleccionada");
+
+          if (preguntaActual < preguntas.length - 1) {
+              document.getElementById("siguientePregunta").style.display = "block";
+          }
+      });
+  });
+</script>
+
+  <script src="js/Exp.js"></script>
+  <img src="../assets/images/botonInicioPagina.webp" alt="Imagen cohete para volver al inicio" id="inicio" class="cohete" />
+  <script src="../js/pages.js"></script>
+<script src="js/menu.js"></script>
+</body>
+
+</html>
