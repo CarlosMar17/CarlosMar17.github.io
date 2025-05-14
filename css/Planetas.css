@@ -3,7 +3,7 @@ h1, h2, h3 {
 }
 
 body, p, a {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 
@@ -240,7 +240,7 @@ body, p, a {
       padding: 0;
       box-sizing: border-box;
       list-style: none;
-      font-family: 'Rajdhani', sans-serif;
+      font-family: Arial, sans-serif;
     }
     
     body {

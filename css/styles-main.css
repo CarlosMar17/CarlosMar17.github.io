@@ -3,7 +3,6 @@
   --border-color:#558bff;
 }
 body{
-  font-family: 'Orbitron', sans-serif;
   background-color: rgb(30, 30, 52);
 }
 
@@ -12,7 +11,7 @@ h1, h2, h3 {
 }
 
 body, p, a {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: Arial, sans-serif;
 }
 .comments-container{
   width: 800px;
@@ -125,7 +124,7 @@ body, p, a {
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
