@@ -13,6 +13,13 @@ h1, h2, h3 {
 body, p, a {
   font-family: Arial, sans-serif;
 }
+
+.menu a.active {
+  background-color: rgba(255, 255, 255, 0.1); /* o el color que simule el hover */
+  color: orange; /* o el color que prefieras para indicar que está activa */
+  border-bottom: 2px solid orange; /* también puedes usar esto para simular subrayado */
+}
+
 .comments-container{
   width: 800px;
   margin: 100px auto;
