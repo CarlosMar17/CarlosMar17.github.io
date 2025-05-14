@@ -137,7 +137,7 @@ body, p, a {
 body {
   background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
   margin: 3% 10% 0 10%;
-  background-image: url(../assets/images/Gif.gif);
+  background-image: url(../assets/video/VIDEO1.mp4);
   background-size: cover;
   background-position: center;
   color: white; /* Ajusta el color del texto si es necesario */
