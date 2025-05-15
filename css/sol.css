@@ -202,7 +202,7 @@ body, p, a {
   article h2 {
     text-align: center;
     font-size: 2em;
-    color: #ffd700;
+
     text-shadow: 2px 2px 4px #000, -2px -2px 4px #000, 0px 4px 4px #000,
       0px -4px 4px #000;
   }
@@ -251,6 +251,7 @@ body, p, a {
       "planetaContenido planetaContenido"
       "introduccion introduccion"
       "caracteristicas curiosidades";
+      color: white;
   }
   
   #planetaContenido {
@@ -338,6 +339,7 @@ body, p, a {
         "introduccion"
         "caracteristicas"
         "curiosidades";
+        color: white;
     }
   
     #planetaContenido {
