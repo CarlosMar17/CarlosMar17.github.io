@@ -329,6 +329,7 @@ section {
     "planeta planeta"
     "introduccion introduccion"
     "caracteristicas curiosidades";
+    color: white;
 }
 
 #introduccion {
@@ -337,7 +338,7 @@ section {
   padding: 1em;
   width: 100%;
   height: fit-content;
-  color: white;
+
 
 }
 
@@ -398,13 +399,12 @@ article {
   text-align: justify;
   border: 2px solid white;
   border-radius: 5px 5px 40px 40px;
-  color: white;
+
 }
 
 article h2 {
   text-align: center;
   font-size: 2em;
-  color: black;
   color: white;
 }
 
