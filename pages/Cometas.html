@@ -9,14 +9,30 @@
   <link rel="shortcut icon" href="../assets/icons/iconsCosmos.ico" type="image/x-icon">
   <title>Cometas ☄️</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <style>
+    /* Estilo para botón activo del carrusel */
+    .page-btn.active {
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #000;
+      font-weight: bold;
+      border: 2px solid #fff;
+      border-radius: 4px;
+    }
+    /* Estilo para enlace activo del menú */
+    nav ul.menu li a.active {
+      color: yellow;
+      border-bottom: 2px solid yellow;
+      font-weight: bold;
+    }
+  </style>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
   <div class="video-background">
     <video autoplay muted loop>
-        <source src="../assets/video/VIDEO3.mp4" type="video/mp4">
-        Tu navegador no soporta la etiqueta de video.
+      <source src="../assets/video/VIDEO3.mp4" type="video/mp4">
+      Tu navegador no soporta la etiqueta de video.
     </video>
   </div>
 
@@ -41,7 +57,6 @@
       </div>
     </div>
   </header>
-  
 
   <nav>
     <ul class="menu" id="menu">
@@ -52,10 +67,10 @@
           <li><a href="Viajes.html">Viajes Espaciales</a></li>
           <li><a href="https://leap-for-mankind.com/" target="_blank">Simulador Espacial</a></li>
         </ul>
-      </li>      
+      </li>
       <li><a href="../pages/Solar.html">Sistema Solar</a></li>
       <li class="submenu">
-        <a href="../pages/Planetas.html">Planetas</a> 
+        <a href="../pages/Planetas.html">Planetas</a>
         <ul class="dropdown">
           <li><a href="../pages/mercurio.html">Mercurio</a></li>
           <li><a href="../pages/venus.html">Venus</a></li>
@@ -70,8 +85,6 @@
       <li><a href="../pages/Cometas.html">Cometas</a></li>
     </ul>
   </nav>
-  <!-- Breadcrumb -->
-  <div class="breadcrumb">
 
 
 
@@ -144,103 +157,84 @@
     </div>
 
               <!-- Sección de navegación -->
-    <div id="pagination">
-      <button id="prev-btn">&lt; Anterior</button>
-      <button class="page-btn" data-page="1">1</button>
-      <button class="page-btn" data-page="2">2</button>
-      <button class="page-btn" data-page="3">3</button>
-      <button class="page-btn" data-page="4">4</button>
-      <button class="page-btn" data-page="5">5</button>
-      <button class="page-btn" data-page="6">6</button>
-      <button class="page-btn" data-page="7">7</button>
-      <button class="page-btn" data-page="8">8</button>
-      <button class="page-btn" data-page="9">9</button>
-      <button class="page-btn" data-page="10">10</button>
-      <button id="next-btn">Siguiente &gt;</button>
+
+  <div id="pagination">
+    <button id="prev-btn">&lt; Anterior</button>
+    <button class="page-btn" data-page="1">1</button>
+    <button class="page-btn" data-page="2">2</button>
+    <button class="page-btn" data-page="3">3</button>
+    <button class="page-btn" data-page="4">4</button>
+    <button class="page-btn" data-page="5">5</button>
+    <button class="page-btn" data-page="6">6</button>
+    <button class="page-btn" data-page="7">7</button>
+    <button class="page-btn" data-page="8">8</button>
+    <button class="page-btn" data-page="9">9</button>
+    <button class="page-btn" data-page="10">10</button>
+    <button id="next-btn">Siguiente &gt;</button>
+  </div>
+
+  <footer>
+    <div id="contenidoFooter">
+      <div id="creditos">
+        <p>INFORMACIÓN</p>
+        <p class="texto-justificado">
+          T-Box está trabajando con el programa educativo Operación Espacial 2.0, el cual tiene como propósito realizar investigaciones para descubrir datos interesantes sobre el Sistema Solar. Deberás aplicar tus habilidades como detective de información para resolver todos los casos de investigación que se plantean en esta aventura espacial.
+        </p>
+      </div>
     </div>
-    
-    <footer> 
-      <div id="contenidoFooter">
-        <div id="creditos">
-          <p>INFORMACIÓN</p>
-          <p class="texto-justificado">
-            T-Box está trabajando con el programa educativo Operación Espacial 2.0, el cual tiene como propósito realizar investigaciones para descubrir datos interesantes sobre el Sistema Solar. Deberás aplicar tus habilidades como detective de información para resolver todos los casos de investigación que se plantean en esta aventura espacial.
-          </p>
-          
-        </div>
-  
-      </div>
-      <div class="footer-text">
-        (c) 2025 tboxplanet.com The power 2.0 connect
-      </div>
-      
-    </footer>
+    <div class="footer-text">
+      (c) 2025 tboxplanet.com The power 2.0 connect
+    </div>
+  </footer>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const carousel = document.getElementById("carousel");
-        if (!carousel) return; // Evita errores si el elemento no existe
-    
-        const buttons = document.querySelectorAll(".page-btn");
-        const nextButton = document.getElementById("next-btn");
-        const prevButton = document.getElementById("prev-btn");
-        let currentPage = 1;
-        const totalPages = 10; // Ajusta según el número de páginas
-    
-        function scrollToPage(page) {
-            const offset = (page - 1) * -100;
-            carousel.style.transform = `translateX(${offset}vw)`;
+      // Resaltar opción activa del menú
+      const currentPageFile = window.location.pathname.split('/').pop();
+      document.querySelectorAll('nav ul.menu a').forEach(link => {
+        if (link.getAttribute('href').endsWith(currentPageFile)) {
+          link.classList.add('active');
         }
-    
-        // Función para cambiar automáticamente de página
-        function autoScroll() {
-            currentPage = (currentPage % totalPages) + 1; // Pasa a la siguiente página
-            scrollToPage(currentPage);
-        }
-    
-        // Iniciar el desplazamiento automático cada 3 segundos
-        let autoScrollInterval = setInterval(autoScroll, 7000);
-    
-        // Pausar el desplazamiento al interactuar con los botones
-        function resetAutoScroll() {
-            clearInterval(autoScrollInterval);
-            autoScrollInterval = setInterval(autoScroll, 7000);
-        }
-    
-        buttons.forEach((button) => {
-            button.addEventListener("click", () => {
-                currentPage = parseInt(button.dataset.page);
-                scrollToPage(currentPage);
-                resetAutoScroll();
-            });
-        });
-    
-        nextButton.addEventListener("click", () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-            } else {
-                currentPage = 1; // Reinicia al inicio cuando llega al final
-            }
-            scrollToPage(currentPage);
-            resetAutoScroll();
-        });
-    
-        prevButton.addEventListener("click", () => {
-            if (currentPage > 1) {
-                currentPage--;
-            } else {
-                currentPage = totalPages; // Vuelve a la última página si está en la primera
-            }
-            scrollToPage(currentPage);
-            resetAutoScroll();
-        });
-    });
-    </script>
-  <script src="js/Exp.js"></script>
-  <img src="../assets/images/botonInicioPagina.webp" alt="Imagen cohete para volver al inicio" id="inicio" class="cohete" />
-  <script src="../js/pages.js"></script>
-<script src="js/menu.js"></script>
+      });
 
-  
+      // Variables del carrusel
+      const carousel = document.getElementById('carousel');
+      const pages = document.querySelectorAll('#carousel .page');
+      const buttons = document.querySelectorAll('.page-btn');
+      const nextButton = document.getElementById('next-btn');
+      const prevButton = document.getElementById('prev-btn');
+      let currentPage = 0;
+
+      function updateCarousel() {
+        const offset = -currentPage * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+
+        // Botones activos
+        buttons.forEach((btn, idx) => {
+          btn.classList.toggle('active', idx === currentPage);
+        });
+      }
+
+      // Eventos de paginación
+      buttons.forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          currentPage = idx;
+          updateCarousel();
+        });
+      });
+      nextButton.addEventListener('click', () => {
+        currentPage = (currentPage + 1) % pages.length;
+        updateCarousel();
+      });
+      prevButton.addEventListener('click', () => {
+        currentPage = (currentPage - 1 + pages.length) % pages.length;
+        updateCarousel();
+      });
+
+      // Iniciar carrusel
+      updateCarousel();
+    });
+  </script>
 </body>
 
 </html>
