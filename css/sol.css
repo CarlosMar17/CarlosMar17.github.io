@@ -144,11 +144,10 @@ body, p, a {
   #descripcionSol p {
     font-size: 2em;
     padding: 0.5em 0;
-    color: yellow;
+
   }
   
   h1 {
-    color: #d1b513;
     text-shadow: 1px 7px 5px #ed6c06, 1px -6px 5px #ed6c06, 6px 0px 5px #ed6c06,
       -7px 0px 5px #ed6c06;
   
@@ -158,9 +157,7 @@ body, p, a {
   section article{
     font-weight: 600;
     color: white;
-    background-color: #fc7210af;
-    box-shadow: 0px 0px 10px #ffd700, 0px 0px 20px #ffa500, 0px 0px 30px #ff8c00,
-      0px 0px 40px #ff4500;
+
   }
   #introduccion {
     grid-area: introduccion;
