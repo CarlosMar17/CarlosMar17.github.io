@@ -188,7 +188,16 @@
   </footer>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", function () {
+      // Resaltar opción activa del menú
+      const currentPageFile = window.location.pathname.split('/').pop();
+      document.querySelectorAll('nav ul.menu a').forEach(link => {
+        if (link.getAttribute('href').endsWith(currentPageFile)) {
+          link.classList.add('active');
+        }
+      });
+
+      // Variables del carrusel
   const carousel = document.getElementById('carousel');
   const pages    = document.querySelectorAll('#carousel .page');
   const buttons  = document.querySelectorAll('.page-btn');
@@ -228,7 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCarousel();
 });
-
   </script>
 </body>
 
