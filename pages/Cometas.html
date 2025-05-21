@@ -245,3 +245,20 @@
 </body>
 
 </html>
+
+
+<script>
+  $(document).ready(function () {
+    // Obtiene la URL actual sin parámetros ni hash
+    const currentPath = window.location.pathname.split("/").pop();
+
+    // Recorre todos los enlaces del menú
+    $("#menu-principal a").each(function () {
+      const linkPath = $(this).attr("href").split("/").pop();
+
+      if (linkPath === currentPath) {
+        $(this).addClass("active");
+      }
+    });
+  });
+</script>

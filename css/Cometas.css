@@ -6,6 +6,11 @@ body, p, a {
   font-family: Arial, sans-serif;
 }
 
+.menu-principal a.active {
+  color: yellow; /* o el color que prefieras */
+  font-weight: bold;
+  text-decoration: underline;
+}
 
 
 
