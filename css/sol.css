@@ -7,7 +7,11 @@ body, p, a {
 }
 
 
-
+.menu-principal a.active {
+  color: yellow; /* o el color que prefieras */
+  font-weight: bold;
+  text-decoration: underline;
+}
 
 @font-face {
     font-family: "IndieFlower";
