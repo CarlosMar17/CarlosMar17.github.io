@@ -188,52 +188,47 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Resaltar opción activa del menú
-      const currentPageFile = window.location.pathname.split('/').pop();
-      document.querySelectorAll('nav ul.menu a').forEach(link => {
-        if (link.getAttribute('href').endsWith(currentPageFile)) {
-          link.classList.add('active');
-        }
-      });
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.getElementById('carousel');
+  const pages    = document.querySelectorAll('#carousel .page');
+  const buttons  = document.querySelectorAll('.page-btn');
+  const nextBtn  = document.getElementById('next-btn');
+  const prevBtn  = document.getElementById('prev-btn');
+  let currentPage = 0;
 
-      // Variables del carrusel
-      const carousel = document.getElementById('carousel');
-      const pages = document.querySelectorAll('#carousel .page');
-      const buttons = document.querySelectorAll('.page-btn');
-      const nextButton = document.getElementById('next-btn');
-      const prevButton = document.getElementById('prev-btn');
-      let currentPage = 0;
+  function updateCarousel() {
+    // ----- Usa la opción A o B, no las dos a la vez -----
+    // Opción A: ancho real en px
+    const pageWidth = pages[0].clientWidth;
+    carousel.style.transform = `translateX(-${pageWidth * currentPage}px)`;
 
-      function updateCarousel() {
-        const offset = -currentPage * 100;
-        carousel.style.transform = `translateX(${offset}%)`;
+    // Opción B: 100vw por página
+    // carousel.style.transform = `translateX(-${currentPage * 100}vw)`;
 
-        // Botones activos
-        buttons.forEach((btn, idx) => {
-          btn.classList.toggle('active', idx === currentPage);
-        });
-      }
+    buttons.forEach((btn, idx) => {
+      btn.classList.toggle('active', idx === currentPage);
+    });
+  }
 
-      // Eventos de paginación
-      buttons.forEach((btn, idx) => {
-        btn.addEventListener('click', () => {
-          currentPage = idx;
-          updateCarousel();
-        });
-      });
-      nextButton.addEventListener('click', () => {
-        currentPage = (currentPage + 1) % pages.length;
-        updateCarousel();
-      });
-      prevButton.addEventListener('click', () => {
-        currentPage = (currentPage - 1 + pages.length) % pages.length;
-        updateCarousel();
-      });
-
-      // Iniciar carrusel
+  buttons.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      currentPage = idx;
       updateCarousel();
     });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentPage = (currentPage + 1) % pages.length;
+    updateCarousel();
+  });
+  prevBtn.addEventListener('click', () => {
+    currentPage = (currentPage - 1 + pages.length) % pages.length;
+    updateCarousel();
+  });
+
+  updateCarousel();
+});
+
   </script>
 </body>
 
