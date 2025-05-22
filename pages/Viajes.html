@@ -10,6 +10,15 @@
   <title>Viajes Espaciales 🚀</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <style>
+    /* Estilo para enlace activo del menú */
+    nav ul.menu-principal li a.active {
+      color: yellow;
+      border-bottom: 2px solid yellow;
+      font-weight: bold;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -73,8 +82,7 @@
   </nav>
   <!-- Breadcrumb -->
   <div class="breadcrumb">
-    <a href="../index.html">Inicio</a> &gt;
-    <a href="Viajes.html">Viajes Espaciales</a>
+
 
 
     <section class="welcome-section">
@@ -228,6 +236,30 @@
   
 </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script>
+  $(document).ready(function () {
+    var currentPage = window.location.pathname.split("/").pop(); // obtiene el archivo actual como 'Viajes.html'
+
+    // Recorre todos los enlaces
+    $("#menu a").each(function () {
+      var linkHref = $(this).attr("href");
+
+      // Si el enlace es igual al archivo actual, se marca como activo
+      if (linkHref === currentPage) {
+        $(this).addClass("active");
+
+        // Si este enlace está dentro de un <ul class="dropdown">, también activa el padre
+        var parentLi = $(this).closest(".dropdown").parent("li");
+        if (parentLi.length) {
+          parentLi.children("a").addClass("active");
+        }
+      }
+    });
+  });
+</script>
+
+  
   <script>
     function mostrarInfo(id) {
         var info = document.getElementById(id);
@@ -463,6 +495,30 @@ animate();
   <img src="../assets/images/botonInicioPagina.webp" alt="Imagen cohete para volver al inicio" id="inicio" class="cohete" />
   <script src="../js/pages.js"></script>
 <script src="js/menu.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+
+  const planetPages = [
+    'Viajes.html'
+  ];
+
+  document.querySelectorAll('nav ul.menu-principal a').forEach(link => {
+    const href = link.getAttribute('href').toLowerCase();
+
+    // Marca el enlace como activo si corresponde al archivo actual
+    if (href.endsWith(currentPage)) {
+      link.classList.add('active');
+    }
+
+    // Si estamos en una página de planeta, marcamos el enlace a "Planetas.html"
+    if (planetPages.includes(currentPage) && href.includes('exploracion.html')) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
 </body>
 
 </html>

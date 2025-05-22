@@ -12,6 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   
+
+    <style>
+    /* Estilo para enlace activo del menú */
+    nav ul.menu li a.active {
+      color: yellow;
+      border-bottom: 2px solid yellow;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
@@ -74,7 +83,6 @@
   </nav>
   <!-- Breadcrumb -->
   <div class="breadcrumb">
-    <a href="index.html">Inicio</a> &gt;
 
   <!-- Sección de Bienvenida -->
   <section class="color-div">
@@ -128,6 +136,19 @@
   <img src="./assets/images/botonInicioPagina.webp" alt="Imagen cohete para volver al inicio" id="inicio" class="cohete" />
   <script src="js/pages.js"></script>
   <script src="js/menu.js"></script>
+
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Resaltar opción activa del menú
+      const currentPageFile = window.location.pathname.split('/').pop();
+      document.querySelectorAll('nav ul.menu a').forEach(link => {
+        if (link.getAttribute('href').endsWith(currentPageFile)) {
+          link.classList.add('active');
+        }
+      });
+});
+  </script>
+
 </body>
 
 </html>

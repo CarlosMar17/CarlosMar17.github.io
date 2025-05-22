@@ -16,6 +16,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
+              <style>
+    /* Estilo para enlace activo del menú */
+    nav ul.menu-principal li a.active {
+      color: yellow;
+      border-bottom: 2px solid yellow;
+      font-weight: bold;
+    }
+
+  </style>
   </head>
 
   <body>
@@ -67,11 +76,7 @@
         </ul>
       </nav>
       <!-- Breadcrumb -->
-      <div class="breadcrumb">
-        <a href="../index.html">Inicio ></a> ;
-        <a href="#">Planetas ></a>;
-        <a href="./urano.html">Urano </a>
-      </div>
+
     </header>
 
     <main>
@@ -163,6 +168,31 @@
       <img src="../assets/images/botonInicioPagina.webp" alt="Imagen cohete para volver al inicio" id="inicio" class="cohete" />
       <script src="../js/pages.js"></script>
       <script src="js/menu.js"></script>
+
+      <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+
+  const planetPages = [
+    'mercurio.html', 'venus.html', 'tierra.html', 'marte.html',
+    'jupiter.html', 'saturno.html', 'urano.html', 'neptuno.html'
+  ];
+
+  document.querySelectorAll('nav ul.menu-principal a').forEach(link => {
+    const href = link.getAttribute('href').toLowerCase();
+
+    // Marca el enlace como activo si corresponde al archivo actual
+    if (href.endsWith(currentPage)) {
+      link.classList.add('active');
+    }
+
+    // Si estamos en una página de planeta, marcamos el enlace a "Planetas.html"
+    if (planetPages.includes(currentPage) && href.includes('planetas.html')) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
     </body>
     
     </html>

@@ -10,6 +10,22 @@
   <title>Planetas 🪐</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <style>
+    /* Estilo para botón activo del carrusel */
+    .page-btn.active {
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #000;
+      font-weight: bold;
+      border: 2px solid #fff;
+      border-radius: 4px;
+    }
+    /* Estilo para enlace activo del menú */
+    nav ul.menu li a.active {
+      color: yellow;
+      border-bottom: 2px solid yellow;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
@@ -72,8 +88,6 @@
   </nav>
   <!-- Breadcrumb -->
   <div class="breadcrumb">
-    <a href="../index.html">Inicio</a> &gt;
-    <a href="Planetas.html">Planetas</a>
 
     <section class="welcome-section">
       <h3>Planetas 🪐</h3>
@@ -244,6 +258,57 @@
     });
   });
 </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Resaltar opción activa del menú
+      const currentPageFile = window.location.pathname.split('/').pop();
+      document.querySelectorAll('nav ul.menu a').forEach(link => {
+        if (link.getAttribute('href').endsWith(currentPageFile)) {
+          link.classList.add('active');
+        }
+      });
+
+      // Variables del carrusel
+  const carousel = document.getElementById('carousel');
+  const pages    = document.querySelectorAll('#carousel .page');
+  const buttons  = document.querySelectorAll('.page-btn');
+  const nextBtn  = document.getElementById('next-btn');
+  const prevBtn  = document.getElementById('prev-btn');
+  let currentPage = 0;
+
+  function updateCarousel() {
+    // ----- Usa la opción A o B, no las dos a la vez -----
+    // Opción A: ancho real en px
+    const pageWidth = pages[0].clientWidth;
+    carousel.style.transform = `translateX(-${pageWidth * currentPage}px)`;
+
+    // Opción B: 100vw por página
+    // carousel.style.transform = `translateX(-${currentPage * 100}vw)`;
+
+    buttons.forEach((btn, idx) => {
+      btn.classList.toggle('active', idx === currentPage);
+    });
+  }
+
+  buttons.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      currentPage = idx;
+      updateCarousel();
+    });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentPage = (currentPage + 1) % pages.length;
+    updateCarousel();
+  });
+  prevBtn.addEventListener('click', () => {
+    currentPage = (currentPage - 1 + pages.length) % pages.length;
+    updateCarousel();
+  });
+
+  updateCarousel();
+});
+  </script>
 
   <script src="js/Exp.js"></script>
   <img src="../assets/images/botonInicioPagina.webp" alt="Imagen cohete para volver al inicio" id="inicio" class="cohete" />
